@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:islami_app/customise_widget/custom_quran_title.dart';
-import 'package:islami_app/reused_style/reused_style.dart';
+import 'package:islami_app/replacing_tabs/replacing_tabs.dart';
 
 class MyHome extends StatefulWidget {
   static const String routeName = 'myHomePage';
@@ -30,196 +29,7 @@ class _MyHomeState extends State<MyHome> {
               style: Theme.of(context).textTheme.headline1,
             ),
           ),
-          body: Container(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                Image.asset(
-                  'assets/images/quranimag.png',
-                  width: 205,
-                  height: 227,
-                ),
-                Row(
-                  children: [
-                    CustomQuranTitle(
-                      title: 'عدد الايات',
-                      top: borderSideOfQuranScreen,
-                      bottom: borderSideOfQuranScreen,
-                      right: borderSideOfQuranScreen,
-                    ),
-                    CustomQuranTitle(
-                      title: 'اسم الصورة',
-                      top: borderSideOfQuranScreen,
-                      bottom: borderSideOfQuranScreen,
-                      left: borderSideOfQuranScreen,
-                    ),
-                  ],
-                ),
-                Expanded(
-                  child: ListView(
-                    children: [
-                      Row(
-                        children: [
-                          CustomQuranTitle(
-                            title: 'عدد الايات',
-                            right: borderSideOfQuranScreen,
-                          ),
-                          CustomQuranTitle(
-                            title: 'اسم الصورة',
-                            left: borderSideOfQuranScreen,
-                          ),
-                        ],
-                      ),
-                      Row(
-                        children: [
-                          CustomQuranTitle(
-                            title: 'عدد الايات',
-                            right: borderSideOfQuranScreen,
-                          ),
-                          CustomQuranTitle(
-                            title: 'اسم الصورة',
-                            left: borderSideOfQuranScreen,
-                          ),
-                        ],
-                      ),
-                      Row(
-                        children: [
-                          CustomQuranTitle(
-                            title: 'عدد الايات',
-                            right: borderSideOfQuranScreen,
-                          ),
-                          CustomQuranTitle(
-                            title: 'اسم الصورة',
-                            left: borderSideOfQuranScreen,
-                          ),
-                        ],
-                      ),
-                      Row(
-                        children: [
-                          CustomQuranTitle(
-                            title: 'عدد الايات',
-                            right: borderSideOfQuranScreen,
-                          ),
-                          CustomQuranTitle(
-                            title: 'اسم الصورة',
-                            left: borderSideOfQuranScreen,
-                          ),
-                        ],
-                      ),
-                      Row(
-                        children: [
-                          CustomQuranTitle(
-                            title: 'عدد الايات',
-                            right: borderSideOfQuranScreen,
-                          ),
-                          CustomQuranTitle(
-                            title: 'اسم الصورة',
-                            left: borderSideOfQuranScreen,
-                          ),
-                        ],
-                      ),
-                      Row(
-                        children: [
-                          CustomQuranTitle(
-                            title: 'عدد الايات',
-                            right: borderSideOfQuranScreen,
-                          ),
-                          CustomQuranTitle(
-                            title: 'اسم الصورة',
-                            left: borderSideOfQuranScreen,
-                          ),
-                        ],
-                      ),
-                      Row(
-                        children: [
-                          CustomQuranTitle(
-                            title: 'عدد الايات',
-                            right: borderSideOfQuranScreen,
-                          ),
-                          CustomQuranTitle(
-                            title: 'اسم الصورة',
-                            left: borderSideOfQuranScreen,
-                          ),
-                        ],
-                      ),
-                      Row(
-                        children: [
-                          CustomQuranTitle(
-                            title: 'عدد الايات',
-                            right: borderSideOfQuranScreen,
-                          ),
-                          CustomQuranTitle(
-                            title: 'اسم الصورة',
-                            left: borderSideOfQuranScreen,
-                          ),
-                        ],
-                      ),
-                      Row(
-                        children: [
-                          CustomQuranTitle(
-                            title: 'عدد الايات',
-                            right: borderSideOfQuranScreen,
-                          ),
-                          CustomQuranTitle(
-                            title: 'اسم الصورة',
-                            left: borderSideOfQuranScreen,
-                          ),
-                        ],
-                      ),
-                      Row(
-                        children: [
-                          CustomQuranTitle(
-                            title: 'عدد الايات',
-                            right: borderSideOfQuranScreen,
-                          ),
-                          CustomQuranTitle(
-                            title: 'اسم الصورة',
-                            left: borderSideOfQuranScreen,
-                          ),
-                        ],
-                      ),
-                      Row(
-                        children: [
-                          CustomQuranTitle(
-                            title: 'عدد الايات',
-                            right: borderSideOfQuranScreen,
-                          ),
-                          CustomQuranTitle(
-                            title: 'اسم الصورة',
-                            left: borderSideOfQuranScreen,
-                          ),
-                        ],
-                      ),
-                      Row(
-                        children: [
-                          CustomQuranTitle(
-                            title: 'عدد الايات',
-                            right: borderSideOfQuranScreen,
-                          ),
-                          CustomQuranTitle(
-                            title: 'اسم الصورة',
-                            left: borderSideOfQuranScreen,
-                          ),
-                        ],
-                      ),
-                      Row(
-                        children: [
-                          CustomQuranTitle(
-                            title: 'عدد الايات',
-                            right: borderSideOfQuranScreen,
-                          ),
-                          CustomQuranTitle(
-                            title: 'اسم الصورة',
-                            left: borderSideOfQuranScreen,
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-          ),
+          body: tabs[currentIndex],
           bottomNavigationBar: Theme(
             data: Theme.of(context).copyWith(
               canvasColor: Theme.of(context).primaryColor,
@@ -247,6 +57,7 @@ class _MyHomeState extends State<MyHome> {
                   icon: ImageIcon(AssetImage('assets/images/quran.png')),
                   label: 'quran',
                 ),
+
               ],
             ),
           ),
