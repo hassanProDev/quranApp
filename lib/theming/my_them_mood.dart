@@ -19,6 +19,10 @@ class MyTheme {
         fontSize: 30,
         fontWeight: FontWeight.bold,
       ),
+      headline2: TextStyle(
+        fontSize: 25,
+        fontWeight: FontWeight.bold,
+      ),
     ),
   );
 

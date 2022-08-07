@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:islami_app/replacing_tabs/replacing_tabs.dart';
+import 'package:islami_app/theming/my_them_mood.dart';
 
 class MyHome extends StatefulWidget {
   static const String routeName = 'myHomePage';
@@ -40,6 +41,8 @@ class _MyHomeState extends State<MyHome> {
                 setState(() {});
               },
               currentIndex: currentIndex,
+              selectedItemColor: MyTheme.blackColor,
+              unselectedItemColor: MyTheme.whiteColor,
               items: [
                 BottomNavigationBarItem(
                   icon: ImageIcon(AssetImage('assets/images/radio.png')),
