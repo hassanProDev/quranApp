@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:islami_app/home_app.dart';
-
+import 'package:islami_app/theming/my_them_mood.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,8 +16,10 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       initialRoute: MyHome.routeName,
       routes: {
-        MyHome.routeName:(_)=>MyHome(),
+        MyHome.routeName: (_) => MyHome(),
       },
+      theme: MyTheme.lightTheme,
+      darkTheme: MyTheme.darkTheme,
     );
   }
 }
