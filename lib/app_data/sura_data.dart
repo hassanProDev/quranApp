@@ -1,5 +1,7 @@
 
 
+import 'package:flutter/services.dart';
+
 class SuraData{
   String? suraName;
   String? ayatCount;
@@ -23,4 +25,9 @@ void addSuraData(){
   for(int i=0;i<suraName.length;i++){
     suraData.add(SuraData(suraName: suraName[i]));
   }
+}
+
+
+void loadSurafile(int index) async{
+  String content =await rootBundle.loadString('asstes/sura/${index+1}.txt');
 }
