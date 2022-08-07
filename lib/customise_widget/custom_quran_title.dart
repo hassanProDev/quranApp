@@ -23,10 +23,7 @@ class CustomQuranTitle extends StatelessWidget {
         alignment: Alignment.center,
         child: Text(
           '$title',
-          style: TextStyle(
-            fontSize: 25,
-            fontWeight: FontWeight.w400,
-          ),
+          style:Theme.of(context).textTheme.headline2,
         ),
         decoration: BoxDecoration(
           border: Border(
