@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:islami_app/home_app.dart';
-import 'package:islami_app/screens/sura_details.dart';
+import 'package:islami_app/tabs/quran/sura_details.dart';
 import 'package:islami_app/theming/my_them_mood.dart';
 
 void main() {

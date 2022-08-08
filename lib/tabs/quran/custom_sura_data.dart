@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:islami_app/app_data/sura_data.dart';
+import 'package:islami_app/tabs/quran/sura_data.dart';
 
-import '../reused_style/reused_style.dart';
-import 'custom_quran_title.dart';
+import '../../customise_widget/custom_quran_title.dart';
+import '../../reused_style/reused_style.dart';
 
 class CustomSuraData extends StatelessWidget {
   final SuraData? suraData;
