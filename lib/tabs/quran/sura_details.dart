@@ -51,7 +51,7 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
                     textAlign: TextAlign.center,
                   ),
                   Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 64.0),
+                    padding: const EdgeInsets.symmetric(horizontal: 64.0,vertical: 16),
                     child: Container(
                       height: 3,
                       color: MyTheme.primaryColor,

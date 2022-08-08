@@ -11,12 +11,13 @@ class QuranScreen extends StatefulWidget {
 }
 
 class _QuranScreenState extends State<QuranScreen> {
-  List<String> ayatNum = [];
 
   @override
   Widget build(BuildContext context) {
+   if(ayatCount.isEmpty){
+     addSuraData();
+   }
 
-    addSuraData();
     print(suraData);
     return Scaffold(
       body: Container(
