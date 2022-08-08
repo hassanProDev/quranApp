@@ -1,11 +1,17 @@
 
 
-import 'package:flutter/services.dart';
+
 
 class SuraData{
   String? suraName;
   String? ayatCount;
-  SuraData({this.suraName,this.ayatCount='2112'});
+  SuraData({this.suraName,this.ayatCount});
+}
+
+class SuraDetailsModel{
+  String? suraName;
+  int? suraIndex;
+  SuraDetailsModel({this.suraName,this.suraIndex});
 }
 
 List<String> suraName=["الفاتحه","البقرة","آل عمران","النساء","المائدة","الأنعام","الأعراف","الأنفال","التوبة","يونس","هود"
@@ -27,7 +33,3 @@ void addSuraData(){
   }
 }
 
-
-void loadSurafile(int index) async{
-  String content =await rootBundle.loadString('asstes/sura/${index+1}.txt');
-}
