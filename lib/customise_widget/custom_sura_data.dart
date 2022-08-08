@@ -1,18 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:islami_app/app_data/sura_data.dart';
+import 'package:islami_app/tabs/quran/sura_data.dart';
 
 import '../reused_style/reused_style.dart';
 import 'custom_quran_title.dart';
 
 class CustomSuraData extends StatelessWidget {
-  final SuraData? suraData;
-  final VoidCallback? func;
-  const CustomSuraData({Key? key,this.suraData,this.func}) : super(key: key);
+  SuraData? suraData;
+  VoidCallback? func;
+
+  CustomSuraData({Key? key, this.suraData, this.func}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: (){
+      onTap: () {
         func!();
       },
       child: Row(

@@ -5,6 +5,12 @@ class SuraData{
   String? ayatCount;
   SuraData({this.suraName,this.ayatCount='2112'});
 }
+class SuraDetailData {
+  String suraName;
+  int suraIndex;
+
+  SuraDetailData(this.suraName, this.suraIndex);
+}
 
 List<String> suraName=["الفاتحه","البقرة","آل عمران","النساء","المائدة","الأنعام","الأعراف","الأنفال","التوبة","يونس","هود"
   ,"يوسف","الرعد","إبراهيم","الحجر","النحل","الإسراء","الكهف","مريم","طه","الأنبياء","الحج","المؤمنون"
@@ -24,3 +30,11 @@ void addSuraData(){
     suraData.add(SuraData(suraName: suraName[i]));
   }
 }
+// List<String> lines = [];
+//
+// void loadFile(index) async {
+//   String content = await rootBundle.loadString('assets/sura/${index + 1}.txt');
+//   content.split('\n');
+//   lines.add(content);
+//   print(lines);
+// }

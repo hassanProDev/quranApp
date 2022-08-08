@@ -1,11 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:islami_app/theming/my_them_mood.dart';
 
-class SuraDetails extends StatelessWidget {
+import 'sura_data.dart';
+
+class SuraDetails extends StatefulWidget {
   static const String routeName = 'suraDetails';
 
   @override
+  State<SuraDetails> createState() => _SuraDetailsState();
+}
+
+class _SuraDetailsState extends State<SuraDetails> {
+  List<String> lines = [];
+
+  @override
   Widget build(BuildContext context) {
+    SuraDetailData suraDetailData =
+        ModalRoute.of(context)?.settings.arguments as SuraDetailData;
+    loadFile(suraDetailData.suraIndex);
     return SafeArea(
       child: Stack(
         children: [
@@ -32,9 +45,33 @@ class SuraDetails extends StatelessWidget {
                   color: MyTheme.whiteColor,
                   borderRadius: BorderRadius.circular(25),
                 ),
-                child: ListView.builder(
-                  itemCount: 0,
-                    itemBuilder: (context, index) => Container()),
+                child: Column(
+                  children: [
+                    Text(
+                      '${suraDetailData.suraName}',
+                      style: Theme.of(context).textTheme.headline2,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 64.0, vertical: 16),
+                      child: Container(
+                        height: 3,
+                        decoration: BoxDecoration(
+                          color: MyTheme.primaryColor,
+                        ),
+                      ),
+                    ),
+                    Expanded(
+                      child: ListView.builder(
+                        itemCount: lines.length,
+                        itemBuilder: (context, index) => Text(
+                          '$lines',
+                          style: Theme.of(context).textTheme.headline2,textAlign: TextAlign.center,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ),
           ),
@@ -42,4 +79,13 @@ class SuraDetails extends StatelessWidget {
       ),
     );
   }
+
+  void loadFile(index) async {
+    String content = await rootBundle.loadString('assets/sura/${index + 1}.txt');
+    content.split('\n');
+    lines.add(content);
+    print(lines);
+    setState(() {});
+  }
 }
+
