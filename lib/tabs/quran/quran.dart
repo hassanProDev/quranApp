@@ -14,7 +14,7 @@ class _QuranScreenState extends State<QuranScreen> {
 
   @override
   Widget build(BuildContext context) {
-   if(ayatCount.isEmpty){
+   if(suraData.isEmpty){
      addSuraData();
    }
 

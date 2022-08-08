@@ -79,7 +79,7 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
 
   void loadFile(index)async{
     String content=await rootBundle.loadString('assets/sura/${index+1}.txt');
-    // content.split('\n');
+    content.split('\n');
     List<String> lines=[];
     lines.add(content);
     verse=lines;
