@@ -5,8 +5,8 @@ import 'package:islami_app/tabs/quran/quran.dart';
 import 'package:islami_app/tabs/tasbeh.dart';
 
 List<Widget> tabs=[
-  AhadethScreen(),
-  TasbehScreen(),
   RadioScreen(),
+  TasbehScreen(),
+  AhadethScreen(),
   QuranScreen(),
 ];
