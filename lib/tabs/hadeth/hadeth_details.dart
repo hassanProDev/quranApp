@@ -1,24 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:islami_app/tabs/quran/sura_data.dart';
-import 'package:islami_app/theming/my_them_mood.dart';
+import 'package:islami_app/tabs/hadeth/hadeth_data.dart';
 
-class SuraDetailsScreen extends StatefulWidget {
-  static const String routeNAme = 'suraDetailsScreen';
+import '../../theming/my_them_mood.dart';
 
-  @override
-  State<SuraDetailsScreen> createState() => _SuraDetailsScreenState();
-}
-
-class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
-  List<String> verse=[];
-
+class HadethDetailsScreen extends StatelessWidget {
+static const String routeName='hadethDetailsScreen';
   @override
   Widget build(BuildContext context) {
-    SuraDetailsModel suraDetailsModel = ModalRoute.of(context)!.settings.arguments as SuraDetailsModel;
-    if(verse.isEmpty){
-      loadFile(suraDetailsModel.suraIndex);
-    }
+    HadethModel hadethModel = ModalRoute.of(context)?.settings.arguments as HadethModel;
     return SafeArea(
       child: Stack(children: [
         Image.asset(
@@ -46,7 +35,7 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
               child: Column(
                 children: [
                   Text(
-                    '${suraDetailsModel.suraName}',
+                    '${hadethModel.title}',
                     style: Theme.of(context).textTheme.headline2,
                     textAlign: TextAlign.center,
                   ),
@@ -60,12 +49,12 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
                   ),
                   Expanded(
                     child: ListView.builder(
-                      itemCount: verse.length,
-                     itemBuilder: (_,index)=>   Text(
-                       '${verse[0]}',
-                       style: Theme.of(context).textTheme.headline2,
-                       textAlign: TextAlign.center,
-                     ),
+                      itemCount: hadethModel.content?.length,
+                      itemBuilder: (_,index)=>   Text(
+                        '${hadethModel.content}',
+                        style: Theme.of(context).textTheme.headline2,
+                        textAlign: TextAlign.center,
+                      ),
                     ),
                   ),
                 ],
@@ -74,15 +63,6 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
           ),
         ),
       ]),
-    );
-  }
-
-  void loadFile(index)async{
-    String content=await rootBundle.loadString('assets/sura/${index+1}.txt');
-    content.split('\n');
-    List<String> lines=[];
-    lines.add(content);
-    verse=lines;
-    setState((){});
+    );;
   }
 }
