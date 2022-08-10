@@ -31,17 +31,21 @@ class _QuranScreenState extends State<QuranScreen> {
             ),
             Row(
               children: [
-                CustomTitle(
-                  title: 'عدد الايات',
-                  top: borderSideOfQuranScreen,
-                  bottom: borderSideOfQuranScreen,
-                  //
+                Expanded(
+                  child: CustomTitle(
+                    title: 'عدد الايات',
+                    top: borderSideOfQuranScreen,
+                    bottom: borderSideOfQuranScreen,
+                    //
+                  ),
                 ),
-                CustomTitle(
-                  title: 'اسم الصورة',
-                  top: borderSideOfQuranScreen,
-                  bottom: borderSideOfQuranScreen,
-                  left: borderSideOfQuranScreen,
+                Expanded(
+                  child: CustomTitle(
+                    title: 'اسم الصورة',
+                    top: borderSideOfQuranScreen,
+                    bottom: borderSideOfQuranScreen,
+                    left: borderSideOfQuranScreen,
+                  ),
                 ),
               ],
             ),

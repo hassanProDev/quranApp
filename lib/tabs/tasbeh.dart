@@ -40,7 +40,7 @@ class _TasbehScreenState extends State<TasbehScreen> {
             style: Theme.of(context).textTheme.headline2,
           ),
           Container(
-            padding: EdgeInsets.all(MediaQuery.of(context).size.width*0.08),
+            padding: EdgeInsets.all(MediaQuery.of(context).size.width*0.04),
             child: Text(
               '$sebhaCounter',
               style: Theme.of(context).textTheme.headline2,

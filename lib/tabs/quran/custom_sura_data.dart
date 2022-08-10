@@ -17,13 +17,18 @@ class CustomSuraData extends StatelessWidget {
       },
       child: Row(
         children: [
-          CustomTitle(
-            title: '${suraData!.ayatCount}',
-            // right: borderSideOfQuranScreen,
+          Expanded(
+            child: CustomTitle(
+              title: '${suraData!.ayatCount}',
+              // right: borderSideOfQuranScreen,
+            ),
           ),
-          CustomTitle(
-            title: '${suraData!.suraName}',
-            left: borderSideOfQuranScreen,
+          
+          Expanded(
+            child: CustomTitle(
+              title: '${suraData!.suraName}',
+              left: borderSideOfQuranScreen,
+            ),
           ),
         ],
       ),

@@ -42,8 +42,8 @@ class _AhadethScreenState extends State<AhadethScreen> {
           Expanded(
             child: ListView.builder(
               itemCount: hadethModel.length,
-              itemBuilder: (context, index) => CustomTitle(
-                func: () {
+              itemBuilder: (context, index) => InkWell(
+                onTap: () {
                   Navigator.pushNamed(
                     context,
                     HadethDetailsScreen.routeName,
@@ -53,7 +53,9 @@ class _AhadethScreenState extends State<AhadethScreen> {
                     ),
                   );
                 },
-                title: hadethModel[index].title,
+                child: CustomTitle(
+                  title: hadethModel[index].title,
+                ),
               ),
             ),
           ),
