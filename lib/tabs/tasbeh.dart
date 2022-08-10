@@ -40,7 +40,7 @@ class _TasbehScreenState extends State<TasbehScreen> {
             style: Theme.of(context).textTheme.headline2,
           ),
           Container(
-            padding: EdgeInsets.all(16),
+            padding: EdgeInsets.all(MediaQuery.of(context).size.width*0.08),
             child: Text(
               '$sebhaCounter',
               style: Theme.of(context).textTheme.headline2,
@@ -51,7 +51,7 @@ class _TasbehScreenState extends State<TasbehScreen> {
             ),
           ),
           Container(
-            padding: EdgeInsets.all(8),
+            padding: EdgeInsets.all(MediaQuery.of(context).size.width*0.02),
             child: Text(
               '${zekr[zekrIndex]}',
               style: Theme.of(context).textTheme.headline2!.copyWith(

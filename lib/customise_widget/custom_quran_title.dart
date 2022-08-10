@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
 
-class CustomQuranTitle extends StatelessWidget {
+class CustomTitle extends StatelessWidget {
   final String? title;
+  final Function? func;
   final BorderSide top;
   final BorderSide bottom;
   final BorderSide right;
   final BorderSide left;
 
-  const CustomQuranTitle(
+  const CustomTitle(
       {Key? key,
       this.title,
+      this.func,
       this.left = BorderSide.none,
       this.right = BorderSide.none,
       this.bottom = BorderSide.none,
@@ -18,12 +20,15 @@ class CustomQuranTitle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
+    return InkWell(
+      onTap: () {
+        func!();
+      },
       child: Container(
         alignment: Alignment.center,
         child: Text(
           '$title',
-          style:Theme.of(context).textTheme.headline2,
+          style: Theme.of(context).textTheme.headline2,
         ),
         decoration: BoxDecoration(
           border: Border(
