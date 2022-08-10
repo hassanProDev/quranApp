@@ -7,7 +7,10 @@ class HadethDetailsScreen extends StatelessWidget {
 static const String routeName='hadethDetailsScreen';
   @override
   Widget build(BuildContext context) {
-    HadethModel hadethModel = ModalRoute.of(context)?.settings.arguments as HadethModel;
+    HadethModel hadethModel = HadethModel();
+    if(hadethModel.content==null && hadethModel.title==null){
+      hadethModel=ModalRoute.of(context)?.settings.arguments as HadethModel;
+    }
     return SafeArea(
       child: Stack(children: [
         Image.asset(
@@ -51,7 +54,7 @@ static const String routeName='hadethDetailsScreen';
                     child: ListView.builder(
                       itemCount: hadethModel.content?.length,
                       itemBuilder: (_,index)=>   Text(
-                        '${hadethModel.content}',
+                        '${hadethModel.content?[index]}',
                         style: Theme.of(context).textTheme.headline2,
                         textAlign: TextAlign.center,
                       ),
