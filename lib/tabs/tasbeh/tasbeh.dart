@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:islami_app/theming/my_them_mood.dart';
 
-import '../app_data/sebha_data.dart';
+import '../../app_data/sebha_data.dart';
 
 class TasbehScreen extends StatefulWidget {
   @override
