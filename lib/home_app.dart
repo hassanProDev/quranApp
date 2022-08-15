@@ -60,6 +60,10 @@ class _MyHomeState extends State<MyHome> {
                   icon: ImageIcon(AssetImage('assets/images/quran.png')),
                   label: 'quran',
                 ),
+                BottomNavigationBarItem(
+                  icon: Icon(Icons.settings),
+                  label: 'setting',
+                ),
 
               ],
             ),

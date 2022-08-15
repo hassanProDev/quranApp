@@ -41,7 +41,7 @@ class _QuranScreenState extends State<QuranScreen> {
                 ),
                 Expanded(
                   child: CustomTitle(
-                    title: 'اسم الصورة',
+                    title: 'السورة',
                     top: borderSideOfQuranScreen,
                     bottom: borderSideOfQuranScreen,
                     left: borderSideOfQuranScreen,
